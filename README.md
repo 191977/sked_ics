@@ -6,7 +6,7 @@ Mit diesem Addon wird Sked um einen ICS Import/Export erweitert.
 Features
 -------
 
-Noch keine. Beteilige dich aktiv an der Entwicklung auf Github `alexplusde/sked_ical`.
+Noch keine. Beteilige dich aktiv an der Entwicklung auf Github `alexplusde/sked_ics`.
 
 Installation
 -------
