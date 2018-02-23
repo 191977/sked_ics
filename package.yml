@@ -1,0 +1,17 @@
+package: sked_ics
+version: '0.1'
+title: 'Sked Kalender ICS'
+author: 'alexplus_de, FriendsOfREDAXO'
+supportpage: www.redaxo.org/slack/
+icon: fa-calendar
+
+requires:
+    packages:
+        sked: '^1.2'
+
+page:
+    hidden: true
+
+pages:
+    sked/ics:
+        title: 'ICS'
