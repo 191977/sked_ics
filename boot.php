@@ -1,7 +1,39 @@
 <?php
 
 if (rex_addon::get('cronjob')->isAvailable() && !rex::isSafeMode()) {
-    rex_cronjob_manager::registerType('rex_cronjob_sked_ics_export');
     rex_cronjob_manager::registerType('rex_cronjob_sked_ics_import');
 }
-
+rex_sql_table::get(rex::getTable('sked_entries'))
+    ->ensureColumn(new rex_sql_column('id', 'int(11) unsigned', false, null, 'auto_increment'))
+    ->ensureColumn(new rex_sql_column('start_date', 'date'))
+    ->ensureColumn(new rex_sql_column('end_date', 'date'))
+    ->ensureColumn(new rex_sql_column('is_fulltime', 'int(1)', true, '0'))
+    ->ensureColumn(new rex_sql_column('start_time', 'time'))
+    ->ensureColumn(new rex_sql_column('end_time', 'time'))
+    ->ensureColumn(new rex_sql_column('category', 'text'))
+    ->ensureColumn(new rex_sql_column('venue', 'int(5)', true))
+    ->ensureColumn(new rex_sql_column('status', 'int(1)', true, '1'))
+    ->ensureColumn(new rex_sql_column('name_1', 'varchar(255)'))
+    ->ensureColumn(new rex_sql_column('teaser_1', 'text'))
+    ->ensureColumn(new rex_sql_column('text_1', 'text'))
+    ->ensureColumn(new rex_sql_column('type', 'varchar(25)', true))
+    ->ensureColumn(new rex_sql_column('repeat', 'varchar(25)', true))
+    ->ensureColumn(new rex_sql_column('repeat_year', 'int(11)', true))
+    ->ensureColumn(new rex_sql_column('repeat_week', 'int(11)', true))
+    ->ensureColumn(new rex_sql_column('repeat_month', 'int(11)', true))
+    ->ensureColumn(new rex_sql_column('end_repeat_date', 'date', true))
+    ->ensureColumn(new rex_sql_column('createdate', 'datetime', true))
+    ->ensureColumn(new rex_sql_column('updatedate', 'datetime', true))
+    ->ensureColumn(new rex_sql_column('createuser', 'varchar(255)'))
+    ->ensureColumn(new rex_sql_column('updateuser', 'varchar(255)'))
+    ->ensureColumn(new rex_sql_column('lang_image_1', 'text', true))
+    ->ensureColumn(new rex_sql_column('lang_images_1', 'text', true))
+    ->ensureColumn(new rex_sql_column('image', 'text', true))
+    ->ensureColumn(new rex_sql_column('file', 'text', true))
+    ->ensureColumn(new rex_sql_column('lang_1', 'text', true))
+    ->ensureColumn(new rex_sql_column('source_url', 'text'))
+    ->ensureColumn(new rex_sql_column('uid', 'varchar(255)', true))
+    ->ensureColumn(new rex_sql_column('raw', 'text', true))
+    ->setPrimaryKey('id')
+    ->ensureIndex(new rex_sql_index('uid', ['uid'], rex_sql_index::UNIQUE))
+    ->ensure();

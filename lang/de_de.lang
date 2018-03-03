@@ -1,2 +1,26 @@
-sked_ics_cronjob_export = ICS aus Sked exportieren
-sked_ics_cronjob_import = ICS in Sked importieren
+sked_ics_import_cronjob_name = .ics-Datei in Sked importieren
+
+sked_ics_import_cronjob_url_label          = URL der .ics-Datei
+sked_ics_import_cronjob_url_notice         = im Format <code>https://www.redaxo.org/ical.ics</code>
+
+sked_ics_import_cronjob_media_label        = Medienpool-Datei
+sked_ics_import_cronjob_media_notice       = für einen manuellen Import. Diese Funktion benötigt deine Unterstützung auf Github!
+
+sked_ics_import_cronjob_choose             = Bitte wählen...
+sked_ics_import_cronjob_choose_none        = Keine Auswahl
+
+sked_ics_import_cronjob_geocoding          = Sollen die Locations gleich geocodiert werden? [Nicht verfügbar]
+sked_ics_import_cronjob_geocoding_notice   = Diese Funktion benötigt deine Unterstützung auf Github!
+
+sked_ics_import_cronjob_debug              = Debug-Modus aktivieren?
+sked_ics_import_cronjob_debug_notice       = Wenn aktiv, werden zusätzliche Informationen beim Ausführen des Cronjobs im Backend angezeigt.
+
+sked_ics_import_cronjob_category_remove         = Unbekannte Kategorien anlegen, alle überzähligen Kategorien in Sked löschen. Achtung! Löscht ggf. auch manuell angelegte Kategorien oder Kategorien weiterer Cronjobs.  
+sked_ics_import_cronjob_category_default_id     = Kategorien in Sked beibehalten, alle Termine einer vorhandenen Kategorie zuordnen 
+sked_ics_import_cronjob_category_keep           = Unbekannte Kategorien anlegen, überzählige Kategorien in Sked beibehalten
+sked_ics_import_cronjob_category_sync           = Wie werden Termine in Sked den Kategorien zugeordnet?
+
+sked_ics_import_cronjob_default_category_sync_id_notice     = (optional) Kategorie, der die Termine in Sked standardmäßig zugeordnet werden.
+sked_ics_import_cronjob_default_location_sync_id_notice     = (optional) Location, der die Termine in Sked standardmäßig zugeordnet wird, wenn <code>LOCATION</code> nicht in der <code>.ics</code>-Datei angegeben wurde. 
+
+sked_ics_import_cronjob_clang_id_notice = REDAXO-Sprache, der Termin-Details (bspw. Titel, Beschreibung) zugeordnet werden
