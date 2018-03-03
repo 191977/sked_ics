@@ -2,34 +2,25 @@
 
 class rex_api_sked_ics_file extends rex_api_function
 {
-    protected $published = true;
 
     function execute()
     {
-
-        $event_uid = rex_request('ics_uid','int',0);
+        $event_uid = rex_request('uid','int',0); // Todo: Sked-Event mittels UID abrufen, da ggf. eindeutig
+        $event_uid = rex_request('id','int',0);
         if ( !$event_uid )
         {
             $result = [ 'errorcode' => 1, rex_i18n::msg('rex_api_sked_ics_file_no_id') ];
             self::httpError( $result );
+        } else {
+            $sked_events = \Sked\Handler\SkedHandler::getEntry($event_id));
+
+            header('Content-Type: text/calendar; charset=utf-8');
+            header('Content-Disposition: attachment; filename=invite.ics'); // Todo: Dateinamen generieren
+
+            sked_ics::factory($sked_events)::getSkedEventsAsIcs();
+            exit();
         }
 
-        // Termin senden
-
-	$vCalendar = new \Eluceo\iCal\Component\Calendar('www.example.com');
-	$vEvent = new \Eluceo\iCal\Component\Event();
-	$vEvent
-	    ->setDtStart(new \DateTime('2012-12-24'))
-	    ->setDtEnd(new \DateTime('2012-12-24'))
-	    ->setNoTime(true)
-	    ->setSummary('Christmas');
-	$vCalendar->addComponent($vEvent);
-
-	header('Content-Type: text/calendar; charset=utf-8');
-	header('Content-Disposition: attachment; filename=invite.ics');
-	$vCalendar->render();
-
-        exit();
     }
 
     public static function httpError( $result )
