@@ -2,7 +2,7 @@ package: sked_ics
 version: '0.1'
 title: 'Sked Kalender ICS'
 author: 'alexplus_de, FriendsOfREDAXO'
-supportpage: www.redaxo.org/slack/
+supportpage: 'https://github.com/alexplusde/sked_ics/issues/'
 icon: fa-calendar
 
 requires:
