@@ -2,6 +2,9 @@
 
 Mit diesem Addon wird Sked um einen ICS Import/Export erweitert und der Möglichkeit, Sked-Einträge als JSON-LD Event auszugeben.
 
+> Hinweis: Nicht für den Produktiveinsatz empfohlen, jedoch zum Testen, Feedback geben und erweitertn! Beteilige dich aktiv an der Entwicklung auf Github: [`alexplusde/sked_ics`](https://github.com/alexplusde/sked_ics).
+
+
 ## Features
 
 * Import von .ics-Kalenderdaten zu Sked via URL-Aufruf
@@ -12,12 +15,12 @@ Mit diesem Addon wird Sked um einen ICS Import/Export erweitert und der Möglich
 * Ausgabe von Kalenderdaten im JSON-LD-Format via Klassenaufruf
 * geplant: Vollständiger Umgang mit mehreren REDAXO-Sprachen
 
-Beteilige dich aktiv an der Entwicklung auf Github: [`alexplusde/sked_ical`](https://github.com/alexplusde/sked_ics).
+Beteilige dich aktiv an der Entwicklung auf Github: [`alexplusde/sked_ics`](https://github.com/alexplusde/sked_ics).
 
 ## Installation
 
 * Addon über den Installer herunterladen oder
-* alternativ GitHub-Version entpacken, den Ordner in `usability` umbenennen und in den REDAXO AddOn-Ordner legen `/redaxo/src/addons/sked_ics`
+* alternativ GitHub-Version entpacken, den Ordner in `sked_ics` umbenennen und in den REDAXO AddOn-Ordner legen `/redaxo/src/addons/sked_ics`
 * alternativ über das AddOn zip_install hochladen und anschließend in der AddOns-Page installieren
 
 Mit der Installation werden in Sked neue Tabellenfelder angelegt: 
@@ -31,7 +34,7 @@ Mit der Installation werden in Sked neue Tabellenfelder angelegt:
 
 ### Import-Cronjob
 
-Einfach das Cronjob-Addon aufrufen, einen neuen Cronjob anlegen und den Instruktionen folgen. 
+Einfach das Cronjob-Addon aufrufen, einen neuen Cronjob anlegen und den Instruktionen folgen.
 
 ### In Modulen und Templates
 
@@ -55,4 +58,3 @@ dump(sked_ics::getSkedEventAsJsonld($sked_events[0]));
 
 * [Markus Poerschke, @markuspoerschke](https://github.com/markuspoerschke/iCal) 
 * [Jonathan Goode, @u01jmg3](https://github.com/u01jmg3) 
-* [Dominik Riedle](https://www.pixelfirma.de) 
