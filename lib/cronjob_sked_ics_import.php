@@ -39,6 +39,7 @@ class rex_cronjob_sked_ics_import extends rex_cronjob
             $existing_categories = $sql->getArray('SELECT id, name_'.$this->getParam('clang_id').' AS name FROM `rex_sked_categories`');
             $debug_dump['$existing_categories'] = $existing_categories;    
             $existing_categories_names = [];
+            // TODO: Hier stattdessen array_column($sql->getArray(...), 'name', 'id') verwenden?
             foreach($existing_categories as $existing_category) {
                 $existing_categories_names[] = $existing_category['name'];
             }
